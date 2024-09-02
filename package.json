@@ -1,5 +1,5 @@
 {
-  "name": "open-swagger-ui",
+  "name": "open-swagger-ui-fixed-port",
   "version": "1.2.0",
   "description": "A easy cli to open swagger(.json or .yaml) files in Swagger UI",
   "main": "dist/index.js",
@@ -66,7 +66,6 @@
   "dependencies": {
     "commander": "^4.1.0",
     "express": "^4.17.1",
-    "get-port": "^5.1.1",
     "got": "^11.8.5",
     "is-url": "^1.2.4",
     "open": "^8.4.0",

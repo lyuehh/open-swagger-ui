@@ -1,6 +1,5 @@
 import express from 'express';
 import SwaggerHandle from 'swagger-ui-express';
-import getPort from 'get-port';
 import got from 'got';
 import { resolve as pathResolve, isAbsolute } from 'path';
 import isUrl from 'is-url';
@@ -12,7 +11,7 @@ import isPlainObject from 'lodash.isplainobject';
 /**
  * Start server by calling this function
  * @param {string} file swagger.json file
- * @param {string} requestedPort choose a port, if not available
+ * @param {string} requestedPort
  * a random port is selected
  * @return {object} server object, just incase if required
  */
@@ -20,7 +19,7 @@ export async function startServerWithSwaggerFile(
   file: string,
   requestedPort: number = 3344
 ) {
-  const port = await getPort({ port: requestedPort });
+  const port = requestedPort;
   const { parsedDoc, swagFilePath } = await getSwaggerDoc(file);
   const app = express();
 
